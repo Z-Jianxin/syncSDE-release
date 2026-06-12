@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Project page for Semantic Editing with Coupled Stochastic Differential Equations, a training-free semantic image editing method."
+    >
+    <title>sync-SDE | Semantic Editing with Coupled SDEs</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="sync-SDE home">
+        <span class="brand-mark"></span>
+        <span>sync-SDE</span>
+      </a>
+      <nav class="site-nav" aria-label="Project navigation">
+        <a href="#gallery">Gallery</a>
+        <a href="#method">Method</a>
+        <a href="#demo">Demo</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero intro-gallery" id="gallery">
+        <div class="hero-copy">
+          <p class="eyebrow">ICML 2026 project page</p>
+          <h1>Semantic Editing with Coupled Stochastic Differential Equations</h1>
+          <p class="authors">Jianxin Zhang · Clayton Scott</p>
+          <p class="hero-lede">
+            sync-SDE is a training-free semantic editing method for out-of-the-box
+            pretrained text-to-image models, requiring no editing-specific
+            training or auxiliary network. It applies to models that admit SDE
+            sampling, including diffusion/rectified flow models such as FLUX.1
+            and FLUX.2.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="https://arxiv.org/abs/2509.24223">arXiv</a>
+            <a class="button" href="https://openreview.net/forum?id=kaOPDyq5sv">OpenReview</a>
+            <a class="button" href="https://github.com/Z-Jianxin/syncSDE-release">Code</a>
+            <a class="button" href="https://huggingface.co/spaces/jianxinz/syncSDE-release">Demo</a>
+          </div>
+          <ul class="claim-list" aria-label="Project highlights">
+            <li>Training-free</li>
+            <li>No test-time optimization</li>
+            <li>No auxiliary network</li>
+            <li>Diffusion/rectified flow SDE sampling</li>
+          </ul>
+
+          <section class="citation-card" id="citation" aria-label="Citation">
+            <p class="eyebrow">Citation</p>
+            <pre><code>@inproceedings{zhang2026semantic,
+  title = {Semantic Editing with Coupled Stochastic Differential Equations},
+  author = {Zhang, Jianxin and Scott, Clayton},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  year = {2026},
+  url = {https://arxiv.org/abs/2509.24223}
+}</code></pre>
+          </section>
+        </div>
+
+        <div class="gallery-panel">
+          <div class="section-heading">
+          <p class="eyebrow">Editing gallery</p>
+          <h2>Small prompt changes, controlled visual changes.</h2>
+          <p>
+            Source and edited images are shown side by side. The method changes
+            the requested semantics while leaving surrounding structure intact.
+          </p>
+          </div>
+
+          <div class="edit-grid">
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/blocks-source.webp" alt="Original wooden letter blocks spelling 365 Memories">
+              <img src="assets/images/samples/blocks-edit.webp" alt="Edited wooden letter blocks spelling Sync SDEs Rise">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>#365 Memories -&gt; Sync SDEs Rise</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A close-up photo of wooden letter blocks on a beige surface spelling <mark>#365 Memories</mark>.</p>
+              <p><b>Target</b> A close-up photo of wooden letter blocks on a beige surface spelling <mark>Sync SDEs Rise</mark>.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/latte-source.webp" alt="Original latte scene with digital clock text 09 02 11">
+              <img src="assets/images/samples/latte-edit.webp" alt="Edited latte scene with digital clock text IC LR 26">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>09 02 11 -&gt; IC LR 26</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A latte with latte art in a black cup on a saucer, served with a glass of water and a spoon on a wooden tray, next to a digital clock display reading <mark>09 02 11</mark>.</p>
+              <p><b>Target</b> A latte with latte art in a black cup on a saucer, served with a glass of water and a spoon on a wooden tray, next to a digital clock display reading <mark>IC LR 26</mark>.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/leaf-source.webp" alt="Original drink scene with green leaf">
+              <img src="assets/images/samples/leaf-edit.webp" alt="Edited drink scene with peas">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>leaf -&gt; peas</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A green beverage beside a bottle on a table, with a small pile of fresh <mark>leaves</mark> in front of the glass.</p>
+              <p><b>Target</b> A green beverage beside a bottle on a table, with a small pile of fresh <mark>peas</mark> in front of the glass.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/oranges-source.webp" alt="Original bowl with oranges">
+              <img src="assets/images/samples/oranges-edit.webp" alt="Edited bowl with apples">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>oranges -&gt; apples</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> Top-down photo of a white bowl on patterned cloth containing two <mark>oranges</mark> with leaves.</p>
+              <p><b>Target</b> Top-down photo of a white bowl on patterned cloth containing two <mark>apples</mark> with leaves.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/dessert-source.webp" alt="Original dessert scene with a spoon">
+              <img src="assets/images/samples/dessert-edit.webp" alt="Edited dessert scene with a fork">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>spoon -&gt; fork</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A dessert with berries and blueberries on a plate next to a black cup, a copper vase of dandelions, and a <mark>spoon</mark>, on the side of a wooden table with a gray wall.</p>
+              <p><b>Target</b> A dessert with berries and blueberries on a plate next to a black cup, a copper vase of dandelions, and a <mark>fork</mark>, on the side of a wooden table with a gray wall.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/portrait-source.webp" alt="Original portrait without glasses">
+              <img src="assets/images/samples/portrait-edit.webp" alt="Edited portrait with glasses">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>add glasses</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A close-up portrait of a woman with long dark braided hair, wearing a white top, with a purple and yellow plumeria flower tucked in her hair.</p>
+              <p><b>Target</b> A close-up portrait of a woman <mark>with a pair of glasses</mark> and long dark braided hair, wearing a white top, with a purple and yellow plumeria flower tucked in her hair.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/cat-source.webp" alt="Original cat with yellow and blue eyes">
+              <img src="assets/images/samples/cat-edit.webp" alt="Edited cat with red and purple eyes">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>yellow/blue -&gt; red/purple</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> Close-up portrait of a cat with one <mark>yellow</mark> eye and one <mark>blue</mark> eye.</p>
+              <p><b>Target</b> Close-up portrait of a cat with one <mark>red</mark> eye and one <mark>purple</mark> eye.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/tomato-source.webp" alt="Original tomato on a plate">
+              <img src="assets/images/samples/tomato-edit.webp" alt="Edited apple on a plate">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>tomato -&gt; apple</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A single ripe <mark>tomato</mark> sitting on a white plate under soft studio light.</p>
+              <p><b>Target</b> A single ripe <mark>apple</mark> sitting on a white plate under soft studio light.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/peace-source.webp" alt="Original sculpture with PEACE text">
+              <img src="assets/images/samples/peace-edit.webp" alt="Edited sculpture with ICLR text">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>PEACE -&gt; ICLR</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A white sculpture of two hands with blue flowers and the word <mark>PEACE</mark> printed on the base.</p>
+              <p><b>Target</b> A white sculpture of two hands with blue flowers and the word <mark>ICLR</mark> printed on the base.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/vans-source.webp" alt="Original image of many vans">
+              <img src="assets/images/samples/vans-edit.webp" alt="Edited image of many iPhones">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>vans -&gt; iPhones</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> An overhead view of many identical white <mark>vans</mark> arranged in neat rows.</p>
+              <p><b>Target</b> An overhead view of many identical white <mark>iPhones</mark> arranged in neat rows.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/sunflowers-source.webp" alt="Original sunflower field">
+              <img src="assets/images/samples/sunflowers-edit.webp" alt="Edited tulip field">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>sunflowers -&gt; tulips</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A wide landscape photograph of a large field of <mark>sunflowers</mark> under warm daylight.</p>
+              <p><b>Target</b> A wide landscape photograph of a large field of <mark>tulips</mark> under warm daylight.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/dog-source.webp" alt="Original image of two dogs">
+              <img src="assets/images/samples/dog-edit.webp" alt="Edited image of two dogs laughing">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>make the dogs laugh</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A photo of two dogs resting on a patterned cushion beside an orange ball.</p>
+              <p><b>Target</b> A photo of two dogs <mark>laughing happily</mark> on a patterned cushion beside an orange ball.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/drink-source.webp" alt="Original yellow drink with 07 token">
+              <img src="assets/images/samples/drink-edit.webp" alt="Edited yellow drink with AI token">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>07 -&gt; AI</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A cinematic close-up of a yellow drink in a glass beside a round token marked <mark>07</mark>, under warm low-key lighting.</p>
+              <p><b>Target</b> A cinematic close-up of a yellow drink in a glass beside a round token marked <mark>AI</mark>, under warm low-key lighting.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/popcorn-source.webp" alt="Original popcorn bucket">
+              <img src="assets/images/samples/popcorn-edit.webp" alt="Popcorn bucket edited to Pop ICLR">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>popcorn -&gt; pop ICLR</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A hand holding a red-and-white striped popcorn bucket filled with popcorn, with the label <mark>Popcorn</mark> on the front.</p>
+              <p><b>Target</b> A hand holding a red-and-white striped popcorn bucket filled with popcorn, with the label <mark>Pop ICLR</mark> on the front.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/catdog-source.webp" alt="Original gray cat standing upright">
+              <img src="assets/images/samples/catdog-edit.webp" alt="Edited small dog standing upright">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>cat -&gt; dog</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A gray tabby <mark>cat</mark> standing upright on its hind legs with one paw raised in an urban scene.</p>
+              <p><b>Target</b> A small <mark>dog</mark> standing upright on its hind legs with one paw raised in an urban scene.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/minecraft-source.webp" alt="Original forest house">
+              <img src="assets/images/samples/minecraft-edit.webp" alt="Forest house edited in Minecraft style">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>photo -&gt; Minecraft style</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A moody photograph of a small house in a forest clearing, surrounded by trees and golden grass.</p>
+              <p><b>Target</b> A <mark>Minecraft-style</mark> scene of a small house in a forest clearing, surrounded by trees and golden grass.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/beer-source.webp" alt="Original glass of golden beer">
+              <img src="assets/images/samples/beer-edit.webp" alt="Edited glass of milk">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>beer -&gt; milk</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A tabletop still life with a wooden barrel, glassware, and a tall glass of golden <mark>beer</mark>.</p>
+              <p><b>Target</b> A tabletop still life with a wooden barrel, glassware, and a tall glass of <mark>milk</mark>.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/deer-source.webp" alt="Original young deer in dry grass">
+              <img src="assets/images/samples/deer-edit.webp" alt="Edited kitten in dry grass">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>deer -&gt; kitten</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A young <mark>deer</mark> resting in dry grass, looking directly at the camera.</p>
+              <p><b>Target</b> A young <mark>kitten</mark> resting in dry grass, looking directly at the camera.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/anime-source.webp" alt="Original portrait">
+              <img src="assets/images/samples/anime-edit.webp" alt="Anime-style edited portrait">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>portrait -&gt; anime scene</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A portrait photo of a young woman in a light blue dress standing near a textured wall.</p>
+              <p><b>Target</b> <mark>An anime scene</mark> of a young woman in a light blue dress standing near a textured wall.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/color-source.webp" alt="Black and white portrait">
+              <img src="assets/images/samples/color-edit.webp" alt="Colored portrait edit">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>black and white -&gt; colored</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A <mark>black and white</mark> portrait photo of a person with long hair wearing a hoodie.</p>
+              <p><b>Target</b> A <mark>colored</mark> portrait photo of a person with long hair wearing a hoodie.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/oil-source.webp" alt="Original outdoor portrait scene">
+              <img src="assets/images/samples/oil-edit.webp" alt="Edited oil painting style portrait scene">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>photo -&gt; oil painting</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> A photo of a woman sitting in a field with a dog beside her, rural background and muted light.</p>
+              <p><b>Target</b> <mark>An oil painting</mark> of a woman sitting in a field with a dog beside her, rural background and muted light.</p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/sunglasses-source.webp" alt="Portrait with sunglasses">
+              <img src="assets/images/samples/sunglasses-edit.webp" alt="Edited portrait after sunglasses negative prompt">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>remove sunglasses</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> Black and white close-up portrait of an older man with a thick beard and mustache, wearing round Ray-Ban <mark>sunglasses</mark> and a dark beanie. He adjusts the glasses with one hand, looking directly into the camera with an intense expression. Dramatic studio lighting highlights the textures of his beard and skin, creating a bold, cinematic style photograph.</p>
+              <p><b>Target</b> Black and white close-up portrait of an older man with a thick beard and mustache, wearing a dark beanie. He is looking directly into the camera with an intense expression. Dramatic studio lighting highlights the textures of his beard and skin, creating a bold, cinematic style photograph.</p>
+              <p><b>Negative</b> <mark>sunglasses</mark></p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/straw-source.webp" alt="Beach cup scene with a straw">
+              <img src="assets/images/samples/straw-edit.webp" alt="Beach cup scene with straw removed">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>remove straw</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> Close-up of a traditional mate cup with metal <mark>straw</mark> placed on sandy beach, photographed with shallow depth of field. In the blurred background, a green sun umbrella stands tall, with beachgoers relaxing under the bright blue sky. Warm daylight and grainy cinematic texture create a nostalgic summer atmosphere, vivid yet softly muted colors.</p>
+              <p><b>Target</b> Close-up of a traditional mate cup placed on sandy beach, photographed with shallow depth of field. In the blurred background, a green sun umbrella stands tall, with beachgoers relaxing under the bright blue sky. Warm daylight and grainy cinematic texture create a nostalgic summer atmosphere, vivid yet softly muted colors.</p>
+              <p><b>Negative</b> <mark>straw</mark></p>
+            </div>
+          </article>
+          <article class="edit-card">
+            <div class="edit-media">
+              <img src="assets/images/samples/fork-source.webp" alt="Breakfast scene with fork">
+              <img src="assets/images/samples/fork-edit.webp" alt="Breakfast scene with fork removed">
+              <span class="media-arrow" aria-hidden="true">-&gt;</span>
+            </div>
+            <h3>remove fork</h3>
+            <div class="prompt-pair">
+              <p><b>Source</b> Close-up of a dessert and coffee on a wooden cafe table. A small tart topped with fresh sliced strawberries sits on a white rectangular plate, placed beside a <mark>fork</mark>. Next to it is a white cup of cappuccino with leaf-shaped latte art. A pink paper mat and part of a magazine page peek from beneath, creating a cozy, minimalist cafe atmosphere, high detail.</p>
+              <p><b>Target</b> Close-up of a dessert and coffee on a wooden cafe table. A small tart topped with fresh sliced strawberries sits on a white rectangular plate, placed beside a fork. Next to it is a white cup of cappuccino with leaf-shaped latte art. A pink paper mat and part of a magazine page peek from beneath, creating a cozy, minimalist cafe atmosphere, high detail.</p>
+              <p><b>Negative</b> <mark>fork</mark></p>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-ink" id="method">
+        <div class="section-heading">
+          <p class="eyebrow">Method</p>
+          <h2>Couple the randomness. Let the prompt change the drift.</h2>
+          <p>
+            Instead of adding an auxiliary network or optimizing at test time,
+            sync-SDE synchronizes the stochastic fluctuations of source and
+            target reverse processes. The target prompt then changes the drift
+            while the shared noise path keeps the sample close to the source.
+          </p>
+        </div>
+
+        <div class="method-flow" aria-label="sync-SDE method steps">
+          <article>
+            <span>01</span>
+            <h3>Invert the source</h3>
+            <p>
+              Evolve the source image through a forward SDE to obtain a
+              structured noisy state and the associated Brownian increments.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Reverse the path</h3>
+            <p>
+              Construct the backward Brownian path implied by time reversal and
+              the source prompt score.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Sample with target text</h3>
+            <p>
+              Drive the target reverse SDE with that same path, changing only
+              the semantic drift induced by the target prompt.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section demo-section" id="demo">
+        <div class="section-heading">
+          <p class="eyebrow">Demo</p>
+          <h2>Try sync-SDE in your browser.</h2>
+          <p>
+            The public Hugging Face Space exposes the Gradio demo for quick
+            source-image editing experiments.
+          </p>
+        </div>
+
+        <div class="demo-card">
+          <div>
+            <strong>syncSDE FLUX Demo</strong>
+            <span>Hosted on Hugging Face Spaces. Feel free to start the Space if it is sleeping.</span>
+          </div>
+          <a class="button primary" href="https://huggingface.co/spaces/jianxinz/syncSDE-release">Open demo</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>sync-SDE</span>
+      <span>Semantic Editing with Coupled Stochastic Differential Equations</span>
+    </footer>
+  </body>
+</html>
