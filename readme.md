@@ -1,10 +1,22 @@
 # sync-SDE
 
-Official implementation of **Semantic Editing with Coupled Stochastic Differential Equations**.
+Official implementation of **Semantic Editing with Coupled Stochastic Differential Equations**, accepted to **ICML 2026**.
 
 sync-SDE is a training-free semantic image editing method for out-of-the-box pretrained text-to-image models that admit SDE sampling, including diffusion/rectified flow models such as FLUX.1 and FLUX.2. It couples the source and target reverse-time paths with a shared backward Brownian motion, changing prompt semantics while preserving fine structure.
 
 **Links:** [Project page](https://z-jianxin.github.io/syncSDE-release/) · [arXiv](https://arxiv.org/abs/2509.24223) · [Hugging Face demo](https://huggingface.co/spaces/jianxinz/syncSDE-release)
+
+## Citation
+
+```bibtex
+@inproceedings{zhang2026semantic,
+  title = {Semantic Editing with Coupled Stochastic Differential Equations},
+  author = {Zhang, Jianxin and Scott, Clayton},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  year = {2026},
+  url = {https://arxiv.org/abs/2509.24223}
+}
+```
 
 ## Highlights
 
@@ -59,18 +71,6 @@ python gradio_demo_flux.py --share
 A public link will appear in the terminal. Open it in your browser and interact with the demo.
 
 You can also use the hosted [Hugging Face Space](https://huggingface.co/spaces/jianxinz/syncSDE-release). Feel free to start the Space if it is sleeping.
-
-## Citation
-
-```bibtex
-@inproceedings{zhang2026semantic,
-  title = {Semantic Editing with Coupled Stochastic Differential Equations},
-  author = {Zhang, Jianxin and Scott, Clayton},
-  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
-  year = {2026},
-  url = {https://arxiv.org/abs/2509.24223}
-}
-```
 
 ## Credits
 
